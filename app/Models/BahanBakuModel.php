@@ -36,4 +36,15 @@ class BahanBakuModel extends Model
 
         return 'tersedia';
     }
+
+    public function getAllWithStatus()
+    {
+        $bahanList = $this->findAll();
+
+        foreach ($bahanList as &$bahan) {
+            $bahan['status'] = $this->calculateStatus($bahan);
+        }
+
+        return $bahanList;
+    }
 }
