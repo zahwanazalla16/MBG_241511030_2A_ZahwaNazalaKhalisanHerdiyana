@@ -1,38 +1,62 @@
 <?php
+
 namespace App\Controllers;
 
-use CodeIgniter\Controller;
+use App\Controllers\BaseController;
 use App\Models\BahanBakuModel;
 
-class BahanController extends Controller
+class BahanController extends BaseController
 {
+    protected $bahanModel;
+
+    public function __construct()
+    {
+        $this->bahanModel = new BahanBakuModel();
+    }
+
     public function tambahBahan()
     {
         if (session()->get('user_role') !== 'gudang') {
             return redirect()->to('/dashboard')->with('error', 'Akses ditolak');
         }
-        return view('gudang/tambah_bahan');
+
+        return view('gudang/tambah_bahan', [
+            'title' => 'Tambah Bahan Baku - MBG System',
+            'user_name' => session()->get('user_name'),
+            'menu' => [
+                ['key' => 'dashboard', 'label' => 'Dashboard', 'url' => '/dashboard'],
+                ['key' => 'tambah', 'label' => 'Tambah Bahan Baku', 'url' => '/bahan/tambahBahan'],
+                ['key' => 'lihat', 'label' => 'Lihat Stok Bahan', 'url' => '/bahan/lihatBahan'],
+                ['key' => 'permintaan', 'label' => 'Kelola Permintaan', 'url' => '/bahan/kelolaPermintaan'],
+            ],
+            'active' => 'tambah'
+        ]);
     }
 
     public function simpanBahan()
     {
-        if (session()->get('user_role') !== 'gudang') {
-            return redirect()->to('/dashboard')->with('error', 'Akses ditolak');
-        }
-        $model = new BahanBakuModel();
-        $data = $this->request->getPost();
-        
-        if ($data['jumlah'] < 0) {
-            return redirect()->back()->with('error', 'Stok tidak boleh negatif');
-        }
-        if (empty($data['nama']) || empty($data['kategori']) || empty($data['satuan']) || empty($data['tanggal_masuk']) || empty($data['tanggal_kadaluarsa'])) {
-            return redirect()->back()->with('error', 'Semua field wajib diisi');
+        $validationRules = [
+            'nama' => 'required|min_length[3]',
+            'kategori' => 'required',
+            'jumlah' => 'required|integer|greater_than_equal_to[0]',
+            'satuan' => 'required',
+            'tanggal_masuk' => 'required|valid_date',
+            'tanggal_kadaluarsa' => 'required|valid_date'
+        ];
+
+        if (!$this->validate($validationRules)) {
+            return redirect()->back()->with('error', 'Data tidak valid, silakan cek kembali.')->withInput();
         }
 
-        $data['status'] = $model->calculateStatus($data);
-        $data['created_at'] = date('Y-m-d H:i:s');
-        $model->insert($data);
-        return redirect()->to('/dashboard')->with('success', 'Bahan ditambahkan');
+        $data = $this->request->getPost([
+            'nama', 'kategori', 'jumlah', 'satuan', 'tanggal_masuk', 'tanggal_kadaluarsa'
+        ]);
+
+        if (!$this->bahanModel->insert($data)) {
+            return redirect()->back()->with('error', 'Gagal menyimpan data bahan.')->withInput();
+        }
+
+        return redirect()->to('/bahan/lihatBahan')->with('success', 'Data bahan berhasil disimpan.');
     }
 
     public function lihatBahan()
@@ -40,9 +64,49 @@ class BahanController extends Controller
         if (session()->get('user_role') !== 'gudang') {
             return redirect()->to('/dashboard')->with('error', 'Akses ditolak');
         }
-        $model = new BahanBakuModel();
-        $data['bahan'] = $model->getAllWithStatus();
-        return view('gudang/lihat_bahan', $data);
+
+        return view('gudang/lihat_bahan', [
+            'title' => 'Lihat Stok Bahan - MBG System',
+            'user_name' => session()->get('user_name'),
+            'menu' => [
+                ['key' => 'dashboard', 'label' => 'Dashboard', 'url' => '/dashboard'],
+                ['key' => 'tambah', 'label' => 'Tambah Bahan Baku', 'url' => '/bahan/tambahBahan'],
+                ['key' => 'lihat', 'label' => 'Lihat Stok Bahan', 'url' => '/bahan/lihatBahan'],
+                ['key' => 'permintaan', 'label' => 'Kelola Permintaan', 'url' => '/bahan/kelolaPermintaan'],
+            ],
+            'active' => 'lihat',
+            'bahan' => $this->bahanModel->findAll(),
+        ]);
     }
 
+    public function editBahan($id)
+    {
+        $bahan = $this->bahanModel->find($id);
+
+        if (!$bahan) {
+            throw new \CodeIgniter\Exceptions\PageNotFoundException("Bahan dengan ID $id tidak ditemukan");
+        }
+
+        return view('gudang/edit_stok', [
+            'title' => 'Edit Stok Bahan - MBG System',
+            'user_name' => session()->get('user_name'),
+            'menu' => [
+                ['key' => 'dashboard', 'label' => 'Dashboard', 'url' => '/dashboard'],
+                ['key' => 'tambah', 'label' => 'Tambah Bahan Baku', 'url' => '/bahan/tambahBahan'],
+                ['key' => 'lihat', 'label' => 'Lihat Stok Bahan', 'url' => '/bahan/lihatBahan'],
+                ['key' => 'permintaan', 'label' => 'Kelola Permintaan', 'url' => '/bahan/kelolaPermintaan'],
+            ],
+            'active' => 'lihat',
+            'bahan' => $bahan,
+        ]);
+    }
+
+    public function updateStok($id)
+    {
+        $jumlahBaru = $this->request->getPost('jumlah');
+
+        $this->bahanModel->update($id, ['jumlah' => $jumlahBaru]);
+
+        return redirect()->to('/bahan/lihatBahan')->with('success', 'Stok bahan berhasil diperbarui.');
+    }
 }

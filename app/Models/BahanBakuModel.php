@@ -31,7 +31,7 @@ class BahanBakuModel extends Model
         }
 
         if (strtotime($data['tanggal_kadaluarsa']) - strtotime($today) <= 3 * 86400) {
-            return 'segera_kadaluarsa';
+            return 'segera kadaluarsa';
         }
 
         return 'tersedia';

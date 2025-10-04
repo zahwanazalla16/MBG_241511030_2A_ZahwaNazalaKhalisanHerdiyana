@@ -15,3 +15,6 @@ $routes->get('/dashboard', 'Dashboard::index');
 $routes->get('/bahan/tambahBahan', 'BahanController::tambahBahan');
 $routes->post('/bahan/simpanBahan', 'BahanController::simpanBahan');
 $routes->get('/bahan/lihatBahan', 'BahanController::lihatBahan');
+
+$routes->get('/bahan/editStok/(:num)', 'BahanController::editBahan/$1');
+$routes->post('/bahan/updateStok/(:num)', 'BahanController::updateStok/$1');
