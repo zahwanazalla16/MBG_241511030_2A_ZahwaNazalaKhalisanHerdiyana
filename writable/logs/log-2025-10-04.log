@@ -428,3 +428,113 @@ WHERE `email` = :email:
 12 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
 13 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
 14 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\ETS_MBG\\public\\index.php')
+CRITICAL - 2025-10-04 09:42:00 --> CodeIgniter\Exceptions\BadMethodCallException: Call to undefined method App\Models\BahanBakuModel::getAllWithStatus
+[Method: GET, Route: bahan/lihatBahan]
+in SYSTEMPATH\Model.php on line 927.
+ 1 APPPATH\Controllers\BahanController.php(45): CodeIgniter\Model->__call('getAllWithStatus', [])
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\BahanController->lihatBahan()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BahanController))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\ETS_MBG\\public\\index.php')
+CRITICAL - 2025-10-04 09:42:12 --> CodeIgniter\Exceptions\BadMethodCallException: Call to undefined method App\Models\BahanBakuModel::getAllWithStatus
+[Method: GET, Route: bahan/lihatBahan]
+in SYSTEMPATH\Model.php on line 927.
+ 1 APPPATH\Controllers\BahanController.php(45): CodeIgniter\Model->__call('getAllWithStatus', [])
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\BahanController->lihatBahan()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BahanController))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\ETS_MBG\\public\\index.php')
+CRITICAL - 2025-10-04 10:25:49 --> ArgumentCountError: Too few arguments to function App\Models\BahanBakuModel::statusBahan(), 0 passed in C:\xampp\htdocs\ETS_MBG\app\Controllers\BahanController.php on line 45 and exactly 1 expected
+[Method: GET, Route: bahan/lihatBahan]
+in APPPATH\Models\BahanBakuModel.php on line 12.
+ 1 APPPATH\Controllers\BahanController.php(45): App\Models\BahanBakuModel->statusBahan()
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\BahanController->lihatBahan()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BahanController))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\ETS_MBG\\public\\index.php')
+CRITICAL - 2025-10-04 10:26:01 --> ArgumentCountError: Too few arguments to function App\Models\BahanBakuModel::statusBahan(), 0 passed in C:\xampp\htdocs\ETS_MBG\app\Controllers\BahanController.php on line 45 and exactly 1 expected
+[Method: GET, Route: bahan/lihatBahan]
+in APPPATH\Models\BahanBakuModel.php on line 12.
+ 1 APPPATH\Controllers\BahanController.php(45): App\Models\BahanBakuModel->statusBahan()
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\BahanController->lihatBahan()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BahanController))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\ETS_MBG\\public\\index.php')
+CRITICAL - 2025-10-04 10:26:07 --> ArgumentCountError: Too few arguments to function App\Models\BahanBakuModel::statusBahan(), 0 passed in C:\xampp\htdocs\ETS_MBG\app\Controllers\BahanController.php on line 45 and exactly 1 expected
+[Method: GET, Route: bahan/lihatBahan]
+in APPPATH\Models\BahanBakuModel.php on line 12.
+ 1 APPPATH\Controllers\BahanController.php(45): App\Models\BahanBakuModel->statusBahan()
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\BahanController->lihatBahan()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BahanController))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\ETS_MBG\\public\\index.php')
+CRITICAL - 2025-10-04 10:31:16 --> ErrorException: Undefined variable $data
+[Method: GET, Route: bahan/lihatBahan]
+in APPPATH\Controllers\BahanController.php on line 45.
+ 1 APPPATH\Controllers\BahanController.php(45): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $data', 'C:\\xampp\\htdocs\\ETS_MBG\\app\\Controllers\\BahanController.php', 45)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\BahanController->lihatBahan()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BahanController))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\ETS_MBG\\public\\index.php')
+CRITICAL - 2025-10-04 10:31:18 --> ErrorException: Undefined variable $data
+[Method: GET, Route: bahan/lihatBahan]
+in APPPATH\Controllers\BahanController.php on line 45.
+ 1 APPPATH\Controllers\BahanController.php(45): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $data', 'C:\\xampp\\htdocs\\ETS_MBG\\app\\Controllers\\BahanController.php', 45)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\BahanController->lihatBahan()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BahanController))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\ETS_MBG\\public\\index.php')
+CRITICAL - 2025-10-04 10:31:24 --> ErrorException: Undefined variable $data
+[Method: GET, Route: bahan/lihatBahan]
+in APPPATH\Controllers\BahanController.php on line 45.
+ 1 APPPATH\Controllers\BahanController.php(45): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $data', 'C:\\xampp\\htdocs\\ETS_MBG\\app\\Controllers\\BahanController.php', 45)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\BahanController->lihatBahan()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BahanController))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\ETS_MBG\\public\\index.php')
+CRITICAL - 2025-10-04 11:12:58 --> CodeIgniter\Exceptions\BadMethodCallException: Call to undefined method App\Models\BahanBakuModel::getAllWithStatus
+[Method: GET, Route: bahan/lihatBahan]
+in SYSTEMPATH\Model.php on line 927.
+ 1 APPPATH\Controllers\BahanController.php(55): CodeIgniter\Model->__call('getAllWithStatus', [])
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\BahanController->lihatBahan()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BahanController))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\ETS_MBG\\public\\index.php')
+CRITICAL - 2025-10-04 11:13:03 --> CodeIgniter\Exceptions\BadMethodCallException: Call to undefined method App\Models\BahanBakuModel::getAllWithStatus
+[Method: GET, Route: bahan/lihatBahan]
+in SYSTEMPATH\Model.php on line 927.
+ 1 APPPATH\Controllers\BahanController.php(55): CodeIgniter\Model->__call('getAllWithStatus', [])
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\BahanController->lihatBahan()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BahanController))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\ETS_MBG\\public\\index.php')
