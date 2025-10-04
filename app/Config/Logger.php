@@ -39,8 +39,10 @@ class Logger extends BaseConfig
      *
      * @var int|list<int>
      */
-    public $threshold = (ENVIRONMENT === 'production') ? 4 : 9;
+    public $threshold =  4;
 
+    public $path = WRITEPATH . 'logs/';
+    public $fileFormat = '<file> : <line> - <message>';
     /**
      * --------------------------------------------------------------------------
      * Date Format for Logs
