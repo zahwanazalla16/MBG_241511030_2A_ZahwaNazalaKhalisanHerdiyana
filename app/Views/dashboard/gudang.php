@@ -72,7 +72,6 @@
       text-align: center;
       font-weight: 600;
     }
-    /* Tombol */
     .btn-outline-success:hover {
       background-color: #28A745 !important;
       color: #fff !important;
@@ -102,7 +101,6 @@
   </style>
 </head>
 <body>
-  <!-- Navbar -->
   <nav class="navbar navbar-expand-lg fixed-top">
     <div class="container-fluid">
       <a class="navbar-brand" href="/dashboard">MBG System</a>
@@ -113,7 +111,6 @@
     </div>
   </nav>
 
-  <!-- Sidebar -->
   <div class="sidebar">
     <ul class="nav flex-column">
       <li class="nav-item">
@@ -131,7 +128,6 @@
     </ul>
   </div>
 
-  <!-- Content -->
   <div class="content">
     <div class="container-fluid pt-4">
       <h3 class="mb-3" style="color: #003087;">Gudang Sistem Makan Bergizi Gratis</h3>
@@ -151,17 +147,15 @@
       <?php endif; ?>
 
       <div class="row">
-        <!-- Tambah Bahan -->
         <div class="col-md-4">
           <div class="card">
             <div class="card-body text-center">
-              <div class="card-icon" style="color: #003087;">Tambah Bahan Baku</div>
+              <div class="card-icon" style="color: #0e56c2ff;">Tambah Bahan Baku</div>
               <p class="card-text text-muted">Input bahan baru ke stok gudang</p>
               <a href="/bahan/tambahBahan" class="btn btn-primary w-100">Tambah</a>
             </div>
           </div>
         </div>
-        <!-- Lihat Bahan -->
         <div class="col-md-4">
           <div class="card">
             <div class="card-body text-center">
@@ -171,7 +165,6 @@
             </div>
           </div>
         </div>
-        <!-- Kelola Permintaan -->
         <div class="col-md-4">
           <div class="card">
             <div class="card-body text-center">
@@ -186,4 +179,3 @@
   </div>
 </body>
 </html>
-```

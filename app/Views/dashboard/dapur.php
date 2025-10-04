@@ -87,7 +87,6 @@
   </style>
 </head>
 <body>
-  <!-- Navbar -->
   <nav class="navbar navbar-expand-lg fixed-top">
     <div class="container-fluid">
       <a class="navbar-brand" href="/dashboard">MBG System</a>
@@ -98,7 +97,6 @@
     </div>
   </nav>
 
-  <!-- Sidebar -->
   <div class="sidebar">
     <ul class="nav flex-column">
       <li class="nav-item">
@@ -113,7 +111,6 @@
     </ul>
   </div>
 
-  <!-- Content -->
   <div class="content">
     <div class="container-fluid pt-4">
       <h3 class="mb-3" style="color: #003087;">Dapur Sistem Makan Bergizi Gratis</h3>
@@ -143,13 +140,12 @@
             </div>
           </div>
         </div>
-        <!-- Riwayat Permintaan -->
         <div class="col-md-6">
           <div class="card">
             <div class="card-body text-center">
-              <div class="card-icon" style="color: #6c757d;">Riwayat Permintaan</div>
+              <div class="card-icon" style="color: #FD7E14;">Riwayat Permintaan</div>
               <p class="card-text text-muted">Cek status persetujuan</p>
-              <a href="#" class="btn btn-outline-secondary w-100">Lihat Riwayat</a>
+              <a href="#" class="btn btn-warning w-100">Lihat Riwayat</a>
             </div>
           </div>
         </div>
@@ -158,4 +154,3 @@
   </div>
 </body>
 </html>
-```
