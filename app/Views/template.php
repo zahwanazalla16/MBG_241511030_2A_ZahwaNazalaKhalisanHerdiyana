@@ -123,10 +123,43 @@
         <?php endforeach; ?>
     </ul>
     </div>
-
+    
     <div class="content">
         <?= $this->renderSection('content') ?>
     </div>
+
+    <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+    <?php if (session()->getFlashdata('success')): ?>
+        <div id="toastSuccess" class="toast align-items-center text-bg-success border-0" role="alert">
+        <div class="d-flex">
+            <div class="toast-body">
+            <?= session()->getFlashdata('success') ?>
+            </div>
+            <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
+        </div>
+        </div>
+    <?php endif; ?>
+
+    <?php if (session()->getFlashdata('error')): ?>
+        <div id="toastError" class="toast align-items-center text-bg-danger border-0" role="alert">
+        <div class="d-flex">
+            <div class="toast-body">
+            <?= session()->getFlashdata('error') ?>
+            </div>
+            <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
+        </div>
+        </div>
+    <?php endif; ?>
+    </div>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var toastSuccess = document.getElementById('toastSuccess');
+        var toastError = document.getElementById('toastError');
+        if (toastSuccess) new bootstrap.Toast(toastSuccess).show();
+        if (toastError) new bootstrap.Toast(toastError).show();
+    });
+    </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>

@@ -46,25 +46,32 @@
                                 <td><?= esc($item['tanggal_masuk']) ?></td>
                                 <td><?= esc($item['tanggal_kadaluarsa']) ?></td>
                                 <td>
-                                    <?php if ($item['status'] === 'Habis'): ?>
+                                    <?php if (strtolower($item['status']) === 'habis'): ?>
                                         <span class="badge bg-danger">Habis</span>
-                                    <?php elseif ($item['status'] === 'Hampir Habis'): ?>
-                                        <span class="badge bg-warning text-dark">Hampir Habis</span>
+                                    <?php elseif (strtolower($item['status']) === 'segera kadaluarsa'): ?>
+                                        <span class="badge bg-warning text-dark">Segera Kadaluarsa</span>
+                                    <?php elseif (strtolower($item['status']) === 'kadaluarsa'): ?>
+                                        <span class="badge bg-secondary">Kadaluarsa</span>
                                     <?php else: ?>
                                         <span class="badge bg-success"><?= esc($item['status']) ?></span>
                                     <?php endif; ?>
                                 </td>
                                 <td class="text-center">
                                     <a href="/bahan/editStok/<?= esc($item['id']) ?>" class="btn btn-warning btn-sm">
-                                        Edit Stok
+                                        Edit
                                     </a>
                                 </td>
                                 <td class="text-center">
-                                    <a href="/gudang/hapusBahan/<?= esc($item['id']) ?>"
-                                       class="btn btn-sm btn-danger"
-                                       onclick="return confirm('Yakin hapus bahan ini?');">
-                                        Hapus
-                                    </a>
+                                    <?php if (strtolower($item['status']) === 'kadaluarsa'): ?>
+                                        <a href="/bahan/hapusBahan/<?= esc($item['id']) ?>" class="btn btn-danger btn-sm"
+                                           onclick="return confirm('Yakin ingin menghapus bahan ini?');">
+                                            Hapus
+                                        </a>
+                                    <?php else: ?>
+                                        <button class="btn btn-secondary btn-sm" disabled title="Hanya bahan kadaluarsa yang bisa dihapus">
+                                            Hapus
+                                        </button>
+                                    <?php endif; ?>
                                 </td>
                             </tr>
                         <?php endforeach; ?>

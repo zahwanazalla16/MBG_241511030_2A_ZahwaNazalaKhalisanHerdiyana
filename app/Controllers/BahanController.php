@@ -109,4 +109,26 @@ class BahanController extends BaseController
 
         return redirect()->to('/bahan/lihatBahan')->with('success', 'Stok bahan berhasil diperbarui.');
     }
+
+    public function hapusBahan($id)
+    {
+        if (session()->get('user_role') !== 'gudang') {
+            return redirect()->to('/dashboard')->with('error', 'Akses ditolak');
+        }
+
+        $model = new BahanBakuModel();
+        $bahan = $model->find($id);
+
+        if (!$bahan) {
+            return redirect()->to('/bahan/lihatBahan')->with('error', 'Bahan tidak ditemukan');
+        }
+
+        if (strtolower($bahan['status']) !== 'kadaluarsa') {
+            return redirect()->to('/bahan/lihatBahan')->with('error', 'Hanya bahan kadaluarsa yang dapat dihapus');
+        }
+
+        $model->delete($id);
+        return redirect()->to('/bahan/lihatBahan')->with('success', 'Bahan berhasil dihapus');
+    }
+
 }

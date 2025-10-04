@@ -18,3 +18,5 @@ $routes->get('/bahan/lihatBahan', 'BahanController::lihatBahan');
 
 $routes->get('/bahan/editStok/(:num)', 'BahanController::editBahan/$1');
 $routes->post('/bahan/updateStok/(:num)', 'BahanController::updateStok/$1');
+// $routes->get('hapusBahan/(:num)', 'BahanController::hapusBahan/$1');
+$routes->get('/bahan/hapusBahan/(:num)', 'BahanController::hapusBahan/$1');
